@@ -4,7 +4,7 @@ node{
    def tomcatBin = 'D:\\Auto_deployment\\apache-tomcat-8.5.87\\apache-tomcat-8.5.87\\bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
-     git 'https://github.com/ Jagadeesh213/simple-java-maven-app.git'
+     git 'https://github.com/ Jagadeesh213/Deploy_War_To_Tomcat_On_Jenkins.git'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
@@ -24,7 +24,7 @@ node{
 '''
    }*/
    stage('Deploy to Tomcat'){
-     bat "copy target\\simple-java-maven-app.war \"${tomcatWeb}\\simple-java-maven-app.war\""
+     bat "copy target\\webapp.war \"${tomcatWeb}\webapp.war\""
    }
       stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
